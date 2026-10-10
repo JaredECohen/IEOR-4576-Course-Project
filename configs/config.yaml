@@ -1,0 +1,30 @@
+# Initial research configuration; validate conventions during implementation.
+random_seed: 4576
+
+sample:
+  acquisition_start: "1961-01-01"
+  replication_start: "1963-07-01"
+  replication_end: "2002-12-31"
+  extension_start: "2003-01-01"
+  # Resolve against the downloaded dataset; record the actual last observation.
+  extension_end: latest_available
+
+universe:
+  source: CRSP
+  exchanges: [NYSE, AMEX, NASDAQ]
+  include_delisted: true
+  membership: historical
+
+parameters:
+  formation_months: 12
+  trading_months: 6
+  overlapping_cohorts: 6
+  pair_counts: [5, 20, 100]
+  entry_standard_deviations: 2.0
+
+extension:
+  pair_selection_candidates: [distance, correlation, cointegration]
+  regime_detection: to_be_selected
+  neural_methods: optional
+  time_scales: [day, hour, minute]
+  intraday_status: requires_separate_dataset_and_design

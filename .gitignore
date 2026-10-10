@@ -1,0 +1,31 @@
+# Credentials and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python, packaging, and notebook caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+.DS_Store
+.claude/memory/
+
+# Generated results; retain the empty directory scaffold.
+results/**
+!results/**/
+!results/**/.gitkeep
+
+# Public/shareable data may be tracked. Licensed WRDS extracts stay local.
+data/raw/crsp/
+data/raw/taq/
+data/interim/crsp/
+data/interim/taq/
+data/processed/crsp/
+data/processed/taq/

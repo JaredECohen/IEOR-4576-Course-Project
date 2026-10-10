@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project"
+version = "0.1.0"
+description = "Replication and extension of Gatev, Goetzmann, and Rouwenhorst (2006)"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas>=2.0",
+    "statsmodels",
+    "matplotlib",
+    "pyyaml",
+    "wrds",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "jupyter"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
